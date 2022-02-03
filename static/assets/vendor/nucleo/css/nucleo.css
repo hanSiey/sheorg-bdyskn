@@ -6,8 +6,8 @@ License - nucleoapp.com/license/
 -------------------------------- */
 @font-face {
   font-family: 'NucleoIcons';
-  src: url('/vendorfonts/nucleo-icons.eot');
-  src: url('/vendorfonts/nucleo-icons.eot') format('embedded-opentype'), url('/vendorfonts/nucleo-icons.woff2') format('woff2'), url('/vendorfonts/nucleo-icons.woff') format('woff'), url('/vendorfonts/nucleo-icons.ttf') format('truetype'), url('/vendorfonts/nucleo-icons.svg') format('svg');
+  src: url('/static/vendorfonts/nucleo-icons.eot');
+  src: url('/static/vendorfonts/nucleo-icons.eot') format('embedded-opentype'), url('/static/vendorfonts/nucleo-icons.woff2') format('woff2'), url('/static/vendorfonts/nucleo-icons.woff') format('woff'), url('/static/vendorfonts/nucleo-icons.ttf') format('truetype'), url('/static/vendorfonts/nucleo-icons.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
