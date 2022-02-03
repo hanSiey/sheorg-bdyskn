@@ -40,10 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
     'shopping.apps.ShoppingConfig',
     'dashboard.apps.DashboardConfig',
+    'cloudinary_storage',
     'cloudinary',
     'gunicorn',
 ]
