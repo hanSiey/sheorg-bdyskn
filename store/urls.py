@@ -19,8 +19,8 @@ from django.conf import settings
 from django.views.static import serve
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin_manual/', admin.site.urls),
     path('', include('shopping.urls')),
-    path('dashboard/', include('dashboard.urls')),
+    path('admin', include('dashboard.urls')),
     re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
 ]

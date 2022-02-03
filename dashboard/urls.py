@@ -8,7 +8,7 @@ from . import views
 urlpatterns = [
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 
-    path('home', views.dashboard, name="dashboard"),
+    path('dashboard', views.dashboard, name="dashboard"),
     path('distributors', views.distributors, name="distributors"),
     path('customers', views.customers_table, name="customers"),
     path('products', views.products, name="products"),
