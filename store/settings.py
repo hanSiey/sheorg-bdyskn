@@ -45,8 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shopping.apps.ShoppingConfig',
     'dashboard.apps.DashboardConfig',
-    'cloudinary_storage',
-    'cloudinary',
+    #'cloudinary_storage',
+    #'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -131,13 +131,13 @@ USE_L10N = True
 USE_TZ = True
 
 #Cloudinary
-CLOUDINARY_STORAGE = {
+'''CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.environ["CLOUD_NAME"],
     'API_KEY': os.environ["CLOUD_API_KEY"],
     'API_SECRET': os.environ["CLOUD_API_SECRET"],
 }
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'''
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
