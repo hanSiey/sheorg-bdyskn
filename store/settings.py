@@ -26,10 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS =  ['www.sheorganic.co.za', 'sheorganic.co.za']
+ALLOWED_HOSTS =  ['*']
 
 
 # Application definition
@@ -40,12 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'shopping.apps.ShoppingConfig',
     'dashboard.apps.DashboardConfig',
     'cloudinary_storage',
     'cloudinary',
-    'gunicorn',
 ]
 
 MIDDLEWARE = [
@@ -129,6 +130,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+#Cloudinary
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ["CLOUD_NAME"],
+    'API_KEY': os.environ["CLOUD_API_KEY"],
+    'API_SECRET': os.environ["CLOUD_API_SECRET"],
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -142,14 +151,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-#Cloudinary
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ["CLOUD_NAME"],
-    'API_KEY': os.environ["CLOUD_API_KEY"],
-    'API_SECRET': os.environ["CLOUD_API_SECRET"],
-}
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 #Email STMP
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
