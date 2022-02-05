@@ -81,24 +81,7 @@ def  CreateDistributor(request):
     }
     return render(request, "admin_panel/add_distributor.html", context)
 
-@login_required(login_url='login')
-@admin_only
-def AddProduct(request):
-    if request.method == 'POST':
-        product_form = ProductsForm(request.POST, request.FILES)
-        if product_form.is_valid():
-            product_form.save()
-            return redirect('products')
-        else:
-            messages.info(request, "Invaild data")
-            return redirect('add_product')
-    else:
-        product_form = ProductsForm()
-        
-    context = {
-        'form': product_form
-    }
-    return render(request, "admin_panel/add_product.html", context)
+
 
 
 @login_required(login_url='login')
