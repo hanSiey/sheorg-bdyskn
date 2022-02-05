@@ -16,7 +16,7 @@ urlpatterns = [
 
 
     path('add_distributor', views.CreateDistributor, name="add_distributor"),
-    #path('add_product', views.AddProduct, name="add_product"),
+    path('add_product', views.AddProduct, name="add_product"),
 
     path('view_order/<str:pk>', views.ViewOrder, name="view_order"),
     path('view_product/<str:pk>', views.ViewProduct, name="view_product"),
