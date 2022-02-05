@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
-
+from cloudinary.models import CloudinaryField
 # Create your models here.
 
 class Customer(models.Model):
@@ -24,7 +24,7 @@ class Product(models.Model):
 	price = models.FloatField()
 	measurement = models.CharField(max_length=10)
 	status = models.CharField(max_length=20, blank=True, choices=STATUS, default="Available")
-	image = models.ImageField(upload_to='images/' ,blank=True)
+	image = CloudinaryField('image')
 
 	def __str__(self):
 		return self.name

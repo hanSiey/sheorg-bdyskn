@@ -86,6 +86,7 @@
               {% endfor %}
             </div>
             <div class="card-body px-lg-5 py-lg-5">
+              {% load cloudinary %}
               <form role="form" method="POST" action="{% url 'add_product' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group mb-3">

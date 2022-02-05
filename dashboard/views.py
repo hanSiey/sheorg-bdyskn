@@ -5,7 +5,7 @@ from shopping.models import *
 from .models import *
 from django.contrib.auth.decorators import login_required
 from shopping.decorators import admin_only
-
+from cloudinary.forms import cl_init_js_callbacks
 
 # Create your views here.
     
